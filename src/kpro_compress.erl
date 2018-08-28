@@ -46,6 +46,7 @@ compress(?snappy, IoData)         -> snappy_compress(IoData).
 -spec decompress(kpro:compress_option(), binary()) -> binary().
 decompress(?no_compression, Bin) -> Bin;
 decompress(?gzip, Bin)           -> zlib:gunzip(Bin);
+decompress(?lz4, Bin)            -> iolist_to_binary(lz4f:decompress(Bin));
 decompress(?snappy, Bin)         -> java_snappy_unpack(Bin).
 
 %%%_* Internals ================================================================

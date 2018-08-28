@@ -5,6 +5,7 @@ case IsRebar3 of
   false ->
     URLs = [ {snappyer, "https://github.com/zmstone/snappyer"}
            , {crc32cer, "https://github.com/zmstone/crc32cer"}
+           , {lz4, "https://github.com/rabbitmq/lz4-erlang"}
            ],
     Rebar3Deps = proplists:get_value(deps, CONFIG),
     Rebar2Deps =
